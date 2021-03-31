@@ -13,8 +13,7 @@ Contains details and metadata
 #### Log dataset - 
 Contains user activity information
 *Sample Record*:
-```{"artist":null,"auth":"Logged In","firstName":"Kynnedi","gender":"F","itemInSession":0,"lastName":"Sanchez","length":null,"level":"free","location":"Cedar Rapids, IA","method":"GET","page":"Home","registration":1541079034796.0,"sessionId":88,"song":null,"status":200,"ts":1541149530796,"userAgent":"\"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/36.0.1985.125 Safari\/537.36\"","userId":"89"}
-```
+```{"artist":null,"auth":"Logged In","firstName":"Kynnedi","gender":"F","itemInSession":0,"lastName":"Sanchez","length":null,"level":"free","location":"Cedar Rapids, IA","method":"GET","page":"Home","registration":1541079034796.0,"sessionId":88,"song":null,"status":200,"ts":1541149530796,"userAgent":"\"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/36.0.1985.125 Safari\/537.36\"","userId":"89"}```
 ### Database Schema
 To model the datasets "Star Schema" is used: the data if thereafter organized in facts and dimensions tables.
 The schema can be seen in the picture below: 
