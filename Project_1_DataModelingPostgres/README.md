@@ -21,7 +21,8 @@ Contains details and metadata <br>
 >   "title":"I Didn't Mean To",
 >   "duration":218.93179,
 >   "year":0
->   }```
+>   }
+>```
    
 #### Log dataset - 
 Contains user activity information <br>
@@ -46,7 +47,8 @@ Contains user activity information <br>
 >   "ts":1541149530796,
 >   "userAgent":"\"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/36.0.1985.125 Safari\/537.36\"",
 >   "userId":"89"
->   }```
+>   }
+>   ```
 ### Database Schema
 To model the datasets "Star Schema" is used: the data if thereafter organized in facts and dimensions tables.
 The schema can be seen in the picture below: 
