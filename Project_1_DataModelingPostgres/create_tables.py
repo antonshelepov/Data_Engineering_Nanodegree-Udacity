@@ -47,14 +47,6 @@ def create_tables(cur, conn):
         cur.execute(query)
         conn.commit()
 
-#def create_enums(cur,conn):
-#    """
-#    Creates two ENUM data types for gender ('M','F','Other') and level ('paid','free')
-#    """
-#    for query in enums_queries:
-#        cur.execute(query)
-#        conn.commit()
-
 def main():
     """
     - Drops (if exists) and Creates the sparkify database. 
@@ -70,7 +62,6 @@ def main():
     """
     cur, conn = create_database()
     drop_tables(cur, conn)
-    #create_enums(cur,conn)
     create_tables(cur, conn)
 
     conn.close()
