@@ -24,7 +24,7 @@ Contains details and metadata <br>
 >   }
 >```
    
-#### Log dataset - 
+#### Log dataset
 Contains user activity information <br>
 *Sample Record*:
 >```
@@ -65,6 +65,6 @@ Run the ```create_tables.py``` in order to create the sparkify database by
 Afterwards the ETL process can be done by
 >```python etl.py```
 ## References
-[PostgreSQL Documentation](https://www.postgresql.org/docs/)
-[Pandas Documentation](https://pandas.pydata.org/pandas-docs/stable/)
+[PostgreSQL Documentation](https://www.postgresql.org/docs/) <br>
+[Pandas Documentation](https://pandas.pydata.org/pandas-docs/stable/) <br>
 [Psycopg Documentation](https://www.psycopg.org/docs/)
