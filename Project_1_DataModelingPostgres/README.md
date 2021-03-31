@@ -7,9 +7,9 @@ Further below you will find database schema, file structure, and examples of the
 ## Database
 ### Datasets
 #### Song dateset
-Contains details and metadata
+Contains details and metadata <br>
 *Sample Record*:
-
+>
 >```{
 >   "num_songs":1,
 >   "artist_id":"ARD7TVE1187B99BFB1",
@@ -24,9 +24,9 @@ Contains details and metadata
 >   }```
    
 #### Log dataset - 
-Contains user activity information
+Contains user activity information <br>
 *Sample Record*:
-
+>
 >```{
 >   "artist":null,
 >   "auth":"Logged In",
