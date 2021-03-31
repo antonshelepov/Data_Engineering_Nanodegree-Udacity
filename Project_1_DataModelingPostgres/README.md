@@ -9,8 +9,8 @@ Further below you will find database schema, file structure, and examples of the
 #### Song dateset
 Contains details and metadata <br>
 *Sample Record*:
->
->```{
+>```
+>{
 >   "num_songs":1,
 >   "artist_id":"ARD7TVE1187B99BFB1",
 >   "artist_latitude":null,
@@ -26,8 +26,8 @@ Contains details and metadata <br>
 #### Log dataset - 
 Contains user activity information <br>
 *Sample Record*:
->
->```{
+>```
+> {
 >   "artist":null,
 >   "auth":"Logged In",
 >   "firstName":"Kynnedi",
