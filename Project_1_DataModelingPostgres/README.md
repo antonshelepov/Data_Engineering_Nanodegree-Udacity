@@ -50,7 +50,7 @@ Contains user activity information <br>
 >   }
 >   ```
 ### Database Schema
-To model the datasets "Star Schema" is used: the data if thereafter organized in facts and dimensions tables.
+To model the dataset "Star Schema" is used: the data if thereafter organized in facts and dimensions tables.
 The schema can be seen in the picture below: 
 ![schema](schema.png) <br>
 *The schema above was generated with [dbdiagram](https://dbdiagram.io/). Many thanks for making our lives easier.*
