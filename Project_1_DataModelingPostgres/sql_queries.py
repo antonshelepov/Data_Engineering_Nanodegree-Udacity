@@ -1,64 +1,60 @@
-# drop tables
-
-songplay_table_drop = "drop table if exists songplays;"
-user_table_drop = "drop table if exists users;"
-song_table_drop = "drop table if exists songs;"
-artist_table_drop = "drop table if exists artists;"
-time_table_drop = "drop table if exists time;"
+songplay_table_drop = "DROP TABLE IF EXISTS songplays;"
+user_table_drop = "DROP TABLE IF EXISTS users;"
+song_table_drop = "DROP TABLE IF EXISTS songs;"
+artist_table_drop = "DROP TABLE IF EXISTS artists;"
+time_table_drop = "DROP TABLE IF EXISTS time;"
 
 # create tables
-#enum_gen = ("""create type gen as enum ('m','f','other');""")
-#enum_lev = ("""create type lev as enum ('paid','free');""")
-songplay_table_create = ("""create table if not exists songplays (songplay_id int, \
-                                                                    start_time timestamp, \
-                                                                    user_id int, \
-                                                                    level varchar, \
-                                                                    song_id int, \
-                                                                    artist_id varchar, \
-                                                                    session_id int, \
-                                                                    location text, \
-                                                                    user_agent text, \
-                                                                    primary key (songplay_id));
+songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays (songplay_id SERIAL, \
+                                                                    start_time TIMESTAMP NOT NULL, \
+                                                                    user_id INTEGER NOT NULL, \
+                                                                    level VARCHAR NOT NULL, \
+                                                                    song_id VARCHAR, \
+                                                                    artist_id VARCHAR, \
+                                                                    session_id INTEGER NOT NULL, \
+                                                                    location TEXT, \
+                                                                    user_agent TEXT, \
+                                                                    PRIMARY KEY(songplay_id));
 """)
 
-user_table_create = ("""create table if not exists users (user_id int, \
-                                                            first_name varchar, \
-                                                            last_name varchar, \
-                                                            gender varchar, \
-                                                            level varchar, \
-                                                            primary key (user_id));
+user_table_create = ("""CREATE TABLE IF NOT EXISTS users (user_id INTEGER, \
+                                                            first_name VARCHAR, \
+                                                            last_name VARCHAR, \
+                                                            gender VARCHAR, \
+                                                            level VARCHAR NOT NULL, \
+                                                            PRIMARY KEY(user_id));
 """)
 
-song_table_create = ("""create table if not exists songs (song_id varchar, \
-                                                            title text, \
-                                                            artist_id varchar, \
-                                                            year int, \
-                                                            duration numeric, \
-                                                            primary key (song_id));
+song_table_create = ("""CREATE TABLE IF NOT EXISTS songs (song_id VARCHAR, \
+                                                            title TEXT NOT NULL, \
+                                                            artist_id VARCHAR NOT NULL, \
+                                                            year INTEGER, \
+                                                            duration NUMERIC, \
+                                                            PRIMARY KEY(song_id));
 """)
 
-artist_table_create = ("""create table if not exists artists (artist_id varchar, \
-                                                                artist_name text, \
-                                                                artist_location varchar, \
-                                                                artist_latitude numeric, \
-                                                                artist_longitude numeric, \
-                                                                primary key (artist_id));
+artist_table_create = ("""CREATE TABLE IF NOT EXISTS artists (artist_id VARCHAR, \
+                                                                artist_name TEXT NOT NULL, \
+                                                                artist_location VARCHAR, \
+                                                                artist_latitude NUMERIC, \
+                                                                artist_longitude NUMERIC, \
+                                                                PRIMARY KEY(artist_id));
 """)
 
-time_table_create = ("""create table if not exists time (start_time timestamp, \
-                                                          hour int, \
-                                                          day int, \
-                                                          week int, \
-                                                          month int, \
-                                                          year int, \
-                                                          weekday int,
-                                                          primary key (start_time));
+time_table_create = ("""CREATE TABLE IF NOT EXISTS time (start_time TIMESTAMP, \
+                                                          hour INTEGER NOT NULL, \
+                                                          day INTEGER NOT NULL, \
+                                                          week INTEGER NOT NULL, \
+                                                          month INTEGER NOT NULL, \
+                                                          year INTEGER NOT NULL, \
+                                                          weekday INTEGER NOT NULL,
+                                                          PRIMARY KEY(start_time));
 """)
 
 # insert records
 
-songplay_table_insert = ("""INSERT INTO songplays (songplay_id,start_time,user_id,level,song_id,artist_id,session_id,location,user_agent) 
-                            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s) 
+songplay_table_insert = ("""INSERT INTO songplays (start_time,user_id,level,song_id,artist_id,session_id,location,user_agent) 
+                            VALUES (%s,%s,%s,%s,%s,%s,%s,%s) 
                             ON CONFLICT (songplay_id) 
                                 DO NOTHING;
 """)
@@ -100,6 +96,5 @@ song_select = ("""SELECT song_id, songs.artist_id
 """)
 
 # query lists
-#enums_queries = [enum_gen,enum_lev]
 create_table_queries = [songplay_table_create, user_table_create, song_table_create, artist_table_create, time_table_create]
 drop_table_queries = [songplay_table_drop, user_table_drop, song_table_drop, artist_table_drop, time_table_drop]
