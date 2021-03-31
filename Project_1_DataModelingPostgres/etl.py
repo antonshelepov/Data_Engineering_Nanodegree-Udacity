@@ -6,6 +6,13 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
+    """
+    - reads into JSON
+    
+    - transforms data by defining specific columns
+    
+    - inserts data into postgres
+    """
     # open song file
     df = pd.read_json(filepath,lines=True)
 
@@ -19,6 +26,19 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
+    """
+    - reads into JSON
+    
+    - filters for rows with page-value as "NextSong"
+    
+    - transforms timestamp to datetime format and separates it into hour,day,week,month,year,weekday
+    
+    - inserts data into time
+    
+    - JOINs tables songs and artists on three columns in order to get all needed data inkl. songid and artistid
+    
+    - inserts data into songplays (songplay_id is set to SERIAL)
+    """
     # open log file
     df = pd.read_json(filepath,lines=True)
 
@@ -57,11 +77,16 @@ def process_log_file(cur, filepath):
             songid, artistid = None, None
 
         # insert songplay record
-        songplay_data = (index,pd.to_datetime(row["ts"],unit="ms"),row["userId"],row["level"],songid,artistid,row["sessionId"],row["location"],row["userAgent"])
+        songplay_data = (pd.to_datetime(row["ts"],unit="ms"),row["userId"],row["level"],songid,artistid,row["sessionId"],row["location"],row["userAgent"])
         cur.execute(songplay_table_insert, songplay_data)
 
 
 def process_data(cur, conn, filepath, func):
+    """
+    - looks for all *.json in dirs and subdirs recurcively
+    
+    - returns found files
+    """
     # get all files matching extension from directory
     all_files = []
     for root, dirs, files in os.walk(filepath):
@@ -81,7 +106,12 @@ def process_data(cur, conn, filepath, func):
 
 
 def main():
-    conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=postgres password=Thami0404")
+    """
+    - establishes connection to postgres
+    
+    - sends files to ETL
+    """
+    conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=student password=student")
     cur = conn.cursor()
 
     process_data(cur, conn, filepath='data/song_data', func=process_song_file)
