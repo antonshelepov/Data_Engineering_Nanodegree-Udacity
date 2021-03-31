@@ -53,6 +53,7 @@ Contains user activity information <br>
 To model the datasets "Star Schema" is used: the data if thereafter organized in facts and dimensions tables.
 The schema can be seen in the picture below: 
 ![schema](schema.png)
+*The schema above was generated with [dbdiagram](https://dbdiagram.io/). Many thanks for making our lives easier.*
 ## Project File Structure
 This project is based on a set of the following files:
 * ```create_tables.py``` - contains a set of postgresql queries for creating a database and tables
