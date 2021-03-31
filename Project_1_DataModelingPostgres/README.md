@@ -21,12 +21,13 @@ Contains details and metadata
    "duration":218.93179,
    "year":0
    }```
+   
 #### Log dataset - 
 Contains user activity information
 *Sample Record*:
 >```{
-   "artist":null,
-   "auth":"Logged In",
+>   "artist":null,
+>   "auth":"Logged In",
    "firstName":"Kynnedi",
    "gender":"F",
    "itemInSession":0,
