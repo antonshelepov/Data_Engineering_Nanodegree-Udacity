@@ -1,7 +1,7 @@
 # Data Modeling with Postgres
 
 ## Project Summary
-A startup called Sparkify (ficional name) wanted me to analyze data they've been collecting. Data Source is a music streaming app. The goal set by the analysts was to build a data platform that will help to understand which songs their users are listening to. Data is stored in two places: as JSON logs on user activity in a directory, as well as a directory with JSON metadata on the songs in their app.
+A startup called Sparkify (fictional name) wanted me to analyze data they've been collecting. Data Source is a music streaming app. The goal set by the analysts was to build a data platform that will help to understand which songs their users are listening to. Data is stored in two places: as JSON logs on user activity in a directory, as well as a directory with JSON metadata on the songs in their app.
 The caveat was for me to design and create a Postgres database optimized for song play analysis. ETL pipeline had to be taken care of as well. 
 Further below you will find database schema, file structure, and examples of the data analysis.
 ## Database
