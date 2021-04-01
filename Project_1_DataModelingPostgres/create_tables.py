@@ -9,9 +9,9 @@ def create_database():
     """
     # connect to default database
     hostname = '127.0.0.1'
-    db = 'studentdb'
-    username = 'student'
-    pwd = 'student'
+    db = ''
+    username = ''
+    pwd = ''
 
     conn = psycopg2.connect(host=hostname, dbname=db, user=username, password=pwd)
     conn.set_session(autocommit=True)
