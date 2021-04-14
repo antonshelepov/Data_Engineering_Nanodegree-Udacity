@@ -44,7 +44,7 @@ All the mentioned aspects can be easily achieved with Apache Cassandra
 ```Project_1B_main.ipynd``` - Jupiter notebook with transformation methods
 
 ## How to
-Details on ```How to``` use the notebook can be found in it above each code block.
+Details on ```ETL Pipeline for file pre-processing``` can be found in it above each code block.
 
 ## References
 [Apache Cassandra Documentation](https://cassandra.apache.org/doc/latest/) <br>
