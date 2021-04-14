@@ -25,10 +25,11 @@ Each .csv has following columns names:
 > "userId"
 > ```
 
+Overall **6821** rows of data have to be extracted and transformed.
+
 ![data](image_event_datafile_new.jpg)
 *data how it is stored in .csv*
 
-Overall **6821** rows of data have to be extracted and transformed.
 ### Database consideration
 When choosing database, following aspects were considered:
 * it needed to be highly available
@@ -39,10 +40,11 @@ When choosing database, following aspects were considered:
 All the mentioned aspects can be easily achieved with Apache Cassandra
 
 ## Project File Structure
-```event_datafile_new.csv``` - database
+```event_datafile_new.csv``` - database <br>
 ```Project_1B_main.ipynd``` - Jupiter notebook with transformation methods
 
 ## How to
+Details on ```How to``` use the notebook can be found in it above each code block.
 
 ## References
 [Apache Cassandra Documentation](https://cassandra.apache.org/doc/latest/) <br>
