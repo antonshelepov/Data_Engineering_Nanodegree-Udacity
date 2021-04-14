@@ -37,7 +37,8 @@ When choosing database, following aspects were considered:
 * large amounts of data (long-term)
 * linear scalability
 
-All the mentioned aspects can be easily achieved with Apache Cassandra
+All the mentioned aspects can be easily achieved with Apache Cassandra. <br>
+Apache Cassandras main feature is that users cannot build JOINs. Query is thereafter the point to start with.
 
 ## Project File Structure
 ```event_datafile_new.csv``` - database <br>
