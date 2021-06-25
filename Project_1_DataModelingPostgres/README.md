@@ -54,7 +54,7 @@ To model the dataset "Star Schema" is used: the data if thereafter organized in 
 The schema can be seen in the picture below: 
 ![schema](schema.png) <br>
 *This schema was generated with [dbdiagram](https://dbdiagram.io/). Many thanks for making our lives easier.*
-## Project File Structure
+## File Structure
 This project is based on a set of the following files:
 * ```create_tables.py``` - contains a set of postgresql queries for creating a database and tables
 * ```etl.py``` - main ETL process as follows: find files, extract JSON data, transform and organize it according to Database Schema and load it to postgres
