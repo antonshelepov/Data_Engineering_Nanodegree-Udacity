@@ -1,13 +1,13 @@
 import configparser
 
+# CONFIG AWS
 
-# CONFIG
 config = configparser.ConfigParser()
 config.read('dwh.cfg')
 
-S3_LOG_DATA = config.get('S3', 'LOG_DATA')
-S3_LOG_JSONPATH = config.get('S3', 'LOG_JSONPATH')
-S3_SONG_DATA = config.get('S3', 'SONG_DATA')
+S3_LOG_DATA      = config.get('S3', 'LOG_DATA')
+S3_LOG_JSONPATH  = config.get('S3', 'LOG_JSONPATH')
+S3_SONG_DATA     = config.get('S3', 'SONG_DATA')
 DWH_IAM_ROLE_ARN = config.get("IAM_ROLE", "ARN")
 
 # DROP TABLES
