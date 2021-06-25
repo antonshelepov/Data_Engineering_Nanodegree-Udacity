@@ -5,7 +5,7 @@ from sql_queries import create_table_queries, drop_table_queries
 
 def drop_tables(cur, conn):
     """
-    This method drops tables from sql_queries/drop_table_queries list
+    This method drops tables from sql_queries and drop_table_queries list
     :param cur:
     :param conn:
     :return: ''
@@ -17,7 +17,7 @@ def drop_tables(cur, conn):
 
 def create_tables(cur, conn):
     """
-    This method creates tables from sql_queries/create_table_queries list
+    This method creates tables from sql_queries and create_table_queries list
     :param cur:
     :param conn:
     :return: ''
