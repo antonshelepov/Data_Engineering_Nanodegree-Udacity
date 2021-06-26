@@ -37,6 +37,7 @@ Steps to follow:
 
 Airflow is a powerful tool in order to automate multiple complex standardized steps (tasks) while conducting ETLs.
 Graph below shows the pipeline which was produced in order to manage Sparkify's data.
+
 ![graph](images/after.png) <br>
 
 ## References
