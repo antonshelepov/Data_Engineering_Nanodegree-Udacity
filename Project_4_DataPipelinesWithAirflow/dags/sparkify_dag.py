@@ -8,7 +8,7 @@ from helpers import SqlQueries
 
 default_args = {
     'owner':'udacity',
-    'start_date':datetime(2021,06,26),
+    'start_date':datetime(2021,6,26),
     'depends_on_past':False,
     'retries':1,
     'retry_delay':timedelta(seconds=500),
@@ -94,7 +94,7 @@ with DAG(
     ],
     )
     
-    end_operator = DummyOperator(task_id='Stop_execution',  dag=dag)
+    end_operator = DummyOperator(task_id='Stop_execution')
     
     start_operator >> [stage_events_to_redshift, stage_songs_to_redshift]
     [stage_events_to_redshift, stage_songs_to_redshift] >> load_songplays_table
