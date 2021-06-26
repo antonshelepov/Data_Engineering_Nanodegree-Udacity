@@ -33,6 +33,12 @@ Steps to follow:
 3. ```aws_credentials``` and ```redshift``` connections must be stored in Airflow UI
 4. Run ```sparkify_dag.py``` from Airflow UI and wait until it is finished
 
+## Result
+
+Airflow is a powerful tool in order to automate multiple complex standardized steps (tasks) while conducting ETLs.
+Graph below shows the pipeline which was produced in order to manage Sparkify's data.
+![graph](/images/after.png) <br>
+
 ## References
 
 [Apache Airflow on Docker](https://medium.com/@itunpredictable/apache-airflow-on-docker-for-complete-beginners-cf76cf7b2c9agg) <br>
