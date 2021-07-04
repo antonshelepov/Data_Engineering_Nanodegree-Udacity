@@ -4,12 +4,12 @@ from airflow.utils.decorators import apply_defaults
 
 class LoadDimensionOperator(BaseOperator):
     """
-    This method loads data into dimension table from staging tables.
+    This class contains a method which loads data from staging table into dimension table.
    
     params:
-    :redshift_conn_id: Conn Id of the Airflow connection to redshift database
-    :destination_table: name of the dimension table to update
-    :sql_statement: 'select' query to retrieve rows for insertion in destination table
+    :redshift_conn_id: Airflow connection_id to redshift
+    :destination_table: name of a table to update
+    :sql_statement: 'select' query in order to retrieve rows for insertion in destination table
     :update_mode: 'insert' or 'overwrite'. 'overwrite' truncates the destination table before inserting rows
     
     returns: None
@@ -32,7 +32,7 @@ class LoadDimensionOperator(BaseOperator):
         self.update_mode=update_mode
 
     def execute(self, context):
-        self.log.info('Fetching redshift hook')
+        self.log.info('hooking redshift')
         redshift = PostgresHook(postgres_conn_id=self.redshift_conn_id)
         
         self.log.info('Loading dimension table {}'.format(self.destination_table))
