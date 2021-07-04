@@ -3,6 +3,17 @@ from airflow.models import BaseOperator
 from airflow.utils.decorators import apply_defaults
 
 class DataQualityOperator(BaseOperator):
+    """This class contains a method, which makes quality check of the pipeline
+    
+    params:
+    :redshift_conn_id: Airflow connection_id to redshift
+    :tables: list of tables to work carry out quality check on
+    
+    reises:
+    :ValueError: if quality check failed
+    
+    returns: None
+    """
 
     ui_color = '#89DA59'
 
