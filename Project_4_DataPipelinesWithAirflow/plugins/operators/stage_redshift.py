@@ -5,18 +5,18 @@ from airflow.utils.decorators import apply_defaults
 
 class StageToRedshiftOperator(BaseOperator):
     """
-    This method transfers data from S3 to staging tables in redshift database.
+    This class contains a method that transfers data from S3 to redshift (staging tables).
     
     params:
-    :aws_credentials_id: Conn Id of the Airflow connection to Amazon Web Services
-    :redshift_conn_id: Conn Id of the Airflow connection to redshift database
-    :table: name of the staging table to populate
+    :aws_credentials_id: Airflow credentials in order to access to AWS
+    :redshift_conn_id: Airflow connection_id to redshift database
+    :table: staging table to populate
     :s3_bucket: name of S3 bucket, e.g. "udacity-dend"
-    :s3_key: name of S3 key. This field is templatable when context is enabled, e.g. "log_data/{execution_date.year}/{execution_date.month}/"
+    :s3_key: name of S3 key. This field serves as a template if context is enabled, e.g. "log_data/{execution_date.year}/{execution_date.month}/"
     :delimiter: csv field delimiter
     :ignore_headers: '0' or '1'
     :data_format: 'csv' or 'json'
-    :jsonpaths: path to JSONpaths file
+    :jsonpaths: path to JSON file
     
     returns: None
     """
@@ -53,7 +53,7 @@ class StageToRedshiftOperator(BaseOperator):
         self.delimiter=delimiter
         self.ignore_headers=ignore_headers
         self.data_format=data_format.lower()     # 'csv', 'json'
-        self.jsonpaths=jsonpaths
+        self.json_path=json_path
 
 
     def execute(self, context):
@@ -65,14 +65,14 @@ class StageToRedshiftOperator(BaseOperator):
         redshift.run("DELETE FROM {}".format(self.table))
         
         self.log.info("Copying data from S3 to Redshift")
-        
         # csv or json format
         if self.data_format == 'csv':
             autoformat = "DELIMITER '{}'".format(self.delimiter)
         elif self.data_format == 'json':
-            json_option = self.jsonpaths or 'auto'
+            json_option = self.json_path or 'auto'
             autoformat = "FORMAT AS JSON '{}'".format(json_option)
         
+        # set S3 path based on execution dates  
         rendered_key = self.s3_key.format(**context)
         self.log.info('Rendered key is ' + rendered_key)
         s3_path = "s3://{}/{}".format(self.s3_bucket, rendered_key)
