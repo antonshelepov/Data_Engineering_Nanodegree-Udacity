@@ -4,12 +4,12 @@ from airflow.utils.decorators import apply_defaults
 
 class LoadFactOperator(BaseOperator):
     """
-    This method loads data into fact table from staging tables.
+    This class contains a method, which loads data from staging tables into fact table.
     
     params:
-    :redshift_conn_id: Conn Id of the Airflow connection to redshift database
-    :destination_table: name of the fact table to update
-    :sql_statement: 'select' query to retrieve rows for insertion in fact table
+    :redshift_conn_id: Airflow connection_id to redshift database
+    :destination_table: fact table to update
+    :sql_statement: 'select' query, which retrieves rows for insertion into fact table
     
     returns: None
     """
@@ -28,7 +28,7 @@ class LoadFactOperator(BaseOperator):
         self.sql_statement=sql_statement
 
     def execute(self, context):
-        self.log.info('Fetching redshift hook')
+        self.log.info('hooking redshift')
         redshift = PostgresHook(postgres_conn_id=self.redshift_conn_id)
         
         self.log.info('Loading fact table')
