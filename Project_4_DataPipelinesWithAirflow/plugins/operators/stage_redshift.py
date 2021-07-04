@@ -41,7 +41,7 @@ class StageToRedshiftOperator(BaseOperator):
                  delimiter=",",
                  ignore_headers=1,
                  data_format="csv",
-                 jsonpaths="",
+                 json_path="",
                  *args, **kwargs):
 
         super(StageToRedshiftOperator, self).__init__(*args, **kwargs)
