@@ -19,8 +19,6 @@ In order to operate more efficiently I was tasked with building an ETL pipeline 
 | analytics.py          | Queries to check, if the ETL worked correctly                |
 | dwh.cfg               | Config file with all the needed configuration variables      |
 
-#### Configuring AWS Access
-
 #### Building Infrastructure
 
 1. Run ```aws_cluster_main.py``` in order to create a Redshift cluster with the needed IAM Role access permissions. 
@@ -40,7 +38,7 @@ There are two scripts to be mentioned (both can be activated with python command
 
 Data goes through a predefined transformation process and is inserted into a Data Warehouse afterwards. Below you can see the database structure, which is based on a *star schema*
 
-![schema](/images/schema.png)
+![schema](\images\schema.png)
 
 ### Analytics
 
