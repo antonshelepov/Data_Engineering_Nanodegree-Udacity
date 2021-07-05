@@ -251,8 +251,6 @@ def aws_client(service, region):
 def main():
     config_parse_file()
 
-    # ec2 = aws_resource('ec2', 'us-east-2')
-    # s3 = aws_resource('s3', 'us-west-2')
     iam = aws_client('iam', "us-east-2")
     redshift = aws_client('redshift', "us-east-2")
 
@@ -264,18 +262,6 @@ def main():
 
     if clusterCreationStarted:
         print("The cluster is being created.")
-        # while True:
-        #     print("Gonna check if the cluster was created...")
-        #     if check_cluster_creation(redshift):
-        #         config_persist_cluster_infos(redshift)
-        #         aws_open_redshift_port(ec2, redshift)
-        #         break
-        #     else:
-        #         print("Not yet. Waiting 30s before next check.")
-        #     time.sleep(30)
-        # print("DONE!!")
-
-        # wait until  becomes true?
 
 if __name__ == '__main__':
     main()
