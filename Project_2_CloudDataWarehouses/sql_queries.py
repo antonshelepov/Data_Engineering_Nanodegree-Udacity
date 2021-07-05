@@ -227,7 +227,7 @@ time_table_insert = ("""
         start_time NOT IN (SELECT DISTINCT start_time FROM time)
 """)
 
-analytical_queries = [
+analytics_queries = [
     'SELECT COUNT(*) AS total FROM artists',
     'SELECT COUNT(*) AS total FROM songs',
     'SELECT COUNT(*) AS total FROM time',
