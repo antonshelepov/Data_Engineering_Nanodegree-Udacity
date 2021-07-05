@@ -38,7 +38,7 @@ There are two scripts to be mentioned (both can be activated with python command
 
 Data goes through a predefined transformation process and is inserted into a Data Warehouse afterwards. Below you can see the database structure, which is based on a *star schema*
 
-![schema](\images\schema.png)
+![schema](schema.png)
 
 ### Analytics
 
