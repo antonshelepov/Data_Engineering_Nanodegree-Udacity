@@ -1,13 +1,13 @@
 import configparser
 
-# CONFIG AWS
 
+# CONFIG
 config = configparser.ConfigParser()
 config.read('dwh.cfg')
 
-S3_LOG_DATA      = config.get('S3', 'LOG_DATA')
-S3_LOG_JSONPATH  = config.get('S3', 'LOG_JSONPATH')
-S3_SONG_DATA     = config.get('S3', 'SONG_DATA')
+S3_LOG_DATA = config.get('S3', 'LOG_DATA')
+S3_LOG_JSONPATH = config.get('S3', 'LOG_JSONPATH')
+S3_SONG_DATA = config.get('S3', 'SONG_DATA')
 DWH_IAM_ROLE_ARN = config.get("IAM_ROLE", "ARN")
 
 # DROP TABLES
@@ -233,13 +233,6 @@ analytical_queries = [
     'SELECT COUNT(*) AS total FROM time',
     'SELECT COUNT(*) AS total FROM users',
     'SELECT COUNT(*) AS total FROM songplays'
-]
-analytical_query_titles = [
-    'Artists table count',
-    'Songs table count',
-    'Time table count',
-    'Users table count',
-    'Song plays table count'
 ]
 
 # QUERY LISTS
