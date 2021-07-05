@@ -4,7 +4,13 @@ from sql_queries import copy_table_order, copy_table_queries, insert_table_order
 
 
 def load_staging_tables(cur, conn):
-    """
+    """This function loads data from logs to staging tables
+    
+    Params:
+        cur: cursor of a connection
+        conn: connection
+        
+    Returns: None
     """
     ITEM = 0
     for query in copy_table_queries:
@@ -12,11 +18,17 @@ def load_staging_tables(cur, conn):
         cur.execute(query)
         conn.commit()
         ITEM = ITEM + 1
-        print("  [DONE]  ")
+        print(f"Done loading item nr. {ITEM}")
 
 
 def insert_tables(cur, conn):
-    """
+    """This function inserts data from staging tables to analytical tables
+    
+    Params:
+        cur: cursor of a connection
+        conn: connection
+        
+    Returns: None
     """
     ITEM = 0
     for query in insert_table_queries:
@@ -24,7 +36,7 @@ def insert_tables(cur, conn):
         cur.execute(query)
         conn.commit()
         ITEM = ITEM + 1
-        print("  [DONE]  ")
+        print(f"Done inserting item nr. {ITEM}")
 
 
 def main():
