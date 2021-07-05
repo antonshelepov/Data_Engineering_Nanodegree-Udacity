@@ -1,6 +1,6 @@
 import configparser
 import psycopg2
-from sql_queries import analytical_queries, analytical_query_titles
+from sql_queries import analytics_queries
 
 
 def run_analytical_queries(cur):
