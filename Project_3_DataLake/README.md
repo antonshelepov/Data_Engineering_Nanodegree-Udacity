@@ -13,7 +13,7 @@ Run ```etl.py``` . The ETL will process data and put it into five corresponding 
 
 ### Files in Repository
 
-As mentioned earlier, the ETL produces a set of directories, filled with parquet files on S3. Each directory can then be translated into a table with specific data. It is worth mentioning that files from table *songs* are partitioned by year and then artist, whereas files belonging to *time* table are partitioned by year and month. *Songplays* files are partitioned by year and month.   
+As mentioned earlier, the ETL produces a set of directories, data will then be stored in parquet format on S3. Each directory can then be translated into a table with specific data. It is worth mentioning that files from table *songs* are partitioned by year and then artist, whereas files belonging to *time* table are partitioned by year and month. *Songplays* files are partitioned by year and month.   
 
 | Table (Directory)         | Description                                                  | Dimensions                                                   |
 | ------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -34,4 +34,3 @@ A set of dimensional tables, with a Fact Table storing quantitative information 
 The more data must be processed, the more time it takes. Each minor mistake in the pipeline can lead to postponed schedule. It is therefor important to develop a habit of testing a data transformation pipeline thoroughly, strictly speaking, on a small dataset. This way a lot of frustration can be saved.
 
 I also found [**docs**](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrameReader.json.html?highlight=json) on how to read JSON with spark helpful, especially the parameters *mode='PERMISSIVE'* and *columnNameOfCorruptRecord='corrupt_record'*. 
-
