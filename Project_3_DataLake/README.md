@@ -31,6 +31,6 @@ A set of dimensional tables, with a Fact Table storing quantitative information 
 
 #### Takeaways
 
-The more data must be processed, the more time it takes. Each minor mistake in the pipeline can lead to postponed schedule. It is therefor important to develop a habit of testing a data transformation pipeline thoroughly, strictly speaking, on a small dataset. This way a lot of frustration can be saved.
+The more data must be processed, the more time it takes. Each minor mistake in the pipeline can lead to postponed schedule. It is therefore important to develop a habit of testing a data transformation pipeline thoroughly, strictly speaking, on a small dataset. This way a lot of frustration can be saved.
 
 I also found [**docs**](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrameReader.json.html?highlight=json) on how to read JSON with spark helpful, especially the parameters *mode='PERMISSIVE'* and *columnNameOfCorruptRecord='corrupt_record'*. 
