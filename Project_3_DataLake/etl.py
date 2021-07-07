@@ -8,6 +8,12 @@ from pyspark.sql.functions import monotonically_increasing_id as mi
 from pyspark.sql.functions import year, month, dayofmonth, hour, dayofweek, weekofyear, date_format
 
 def create_spark_session():
+    """This function creates a Spark session
+    
+    Params:
+    
+    Returns: pyspark.sql.session.SparkSession
+    """
     spark = SparkSession \
         .builder \
         .config("spark.jars.packages", "org.apache.hadoop:hadoop-aws:2.7.0") \ # comment this line out, if spark is used locally
@@ -15,11 +21,14 @@ def create_spark_session():
     return spark
     
 def process_song_data(spark, input_data, output_data):
-    """This function
+    """This function creates sons and artists tables based on song data (song_data directory)
     
     Params:
+        spark - active Spark session
+        input_data - path to S3 bucket with input data
+        output_data - path to S3 bucket to store output tables
     
-    Returns: 
+    Returns: None
     """
     # get filepath to song data file
     song_data = os.path.join(input_data, 'song_data/*/*/*/*.json')
@@ -57,11 +66,14 @@ def process_song_data(spark, input_data, output_data):
 
 
 def process_log_data(spark, input_data, output_data):
-    """This function
+    """This function creates users, time and songplays tables based on log data (log_data directories)
     
     Params:
-    
-    Returns:
+        spark - active Spark session
+        input_data - path to S3 bucket with input data
+        output_data - path to S3 bucket to store output tables
+
+    Returns: None
     """
     # get filepath to log data file
     log_data = os.path.join(input_data, 'log_data/')
