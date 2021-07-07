@@ -86,8 +86,6 @@ def process_log_data(spark, input_data, output_data):
 
     # create timestamp column from original timestamp column
     df = df.withColumn("start_time", F.to_timestamp(df.ts/1000))
-    #get_timestamp = udf(lambda x : datetime.utcfromtimestamp(int(x)/1000), TimestampType())
-    #df = df.withColumn("start_time", get_timestamp("ts"))
     
     # extract columns to create time table
     time_table = df.withColumn('hour',hour("start_time"))\
@@ -145,8 +143,6 @@ def main():
     spark = create_spark_session()
     input_data = "s3a://udacity-dend/"
     output_data = "s3a://udacity-dend/output"
-    #input_data = "./data/"
-    #output_data = "./data/"
     
     process_song_data(spark, input_data, output_data)    
     process_log_data(spark, input_data, output_data)
