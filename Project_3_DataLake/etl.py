@@ -10,7 +10,7 @@ from pyspark.sql.functions import year, month, dayofmonth, hour, dayofweek, week
 def create_spark_session():
     spark = SparkSession \
         .builder \
-        .config("spark.jars.packages", "org.apache.hadoop:hadoop-aws:2.7.0") \
+        .config("spark.jars.packages", "org.apache.hadoop:hadoop-aws:2.7.0") \ # comment this line out, if spark is used locally
         .getOrCreate()
     return spark
     
