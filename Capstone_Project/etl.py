@@ -49,7 +49,7 @@ def main():
     
     - sends files to ETL
     """
-    conn = psycopg2.connect("host=127.0.0.1 dbname=capstone user=postgres password=postgres port=5433")
+    conn = psycopg2.connect("host= dbname= user= password= port=")
     conn.set_session(autocommit=True)
     cur = conn.cursor()
     
