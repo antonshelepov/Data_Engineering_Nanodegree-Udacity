@@ -301,11 +301,12 @@ def process_demographics(df_demographics, df_uszips):
     return df_merged
     
 def remove_extra(df):
-    """This method
+    """This method loooks for pre-defined columns in a dataframe and removes them
     
     Params:
-    
-    Returns:
+        df: dataframe
+        
+    Returns: cleaned dataframe
     """
     cols_2_remove = ['validres', 'delete_days', 'delete_mexl', 'delete_dup', 'delete_visa', 'delete_recdup']
     df = df.drop(*cols_2_remove)
@@ -313,11 +314,12 @@ def remove_extra(df):
 
 udf_to_datetime_sas = udf(lambda x: to_datetime(x), DateType())
 def to_datetime(x):
-    """This method
+    """This method takes in a SAS coded date and converts it to a normal one
     
     Params:
+        x: SAS encoded date
     
-    Returns:
+    Returns: normal encoded date
     """
     try:
         start = dt.datetime(1960, 1, 1).date()
@@ -327,11 +329,16 @@ def to_datetime(x):
 
 @timed
 def process_immi_data(spark, df_raw, df_visatype, df_country_code, df_airports):
-    """This method
+    """This method cleanes immigration datasets
     
     Params:
+        spark: spark session
+        df_raw: dataset to manipulate
+        df_visatype: additional dataset for mapping purposes
+        df_country_code: additional dataset for mapping purposes
+        df_airports: additional dataset for mapping purposes
     
-    Returns:
+    Returns: df, cleaned immigration dataset
     """
     print(f'Processing: immigration_data')
     # matflag is null
@@ -434,9 +441,13 @@ def main():
     
     ## process dataframes ##
     df_visatype = process_visatype(df_visatype)
+    assert df_visatype.shape[0] != 0,"df_visatype is empty"
     df_ccodes = process_ccodes(I94_cit_codes, df_ccodes)
+    assert df_ccodes.shape[0] != 0,"df_ccodes is empty"
     df_airports = process_airports(I94_ports, df_airports, df_international)
+    assert df_airports.shape[0] != 0,"df_airports is empty"
     df_demographics = process_demographics(df_demographics, df_uszips)
+    assert df_demographics.shape[0] != 0,"df_demographics is empty"
     
     # define list of immigration files to process
     immi_files = glob.glob(dir_immi_data)
@@ -446,11 +457,14 @@ def main():
     for count,immi_file in enumerate(immi_files):
         print(f'--- Processing: {count+1} | {len(immi_files)} ---> {immi_file}')
         raw_file = spark.read.format('com.github.saurfang.sas.spark').load(immi_file)
+        assert raw_file.count() != 0,"raw_file is empty" 
         if flag:
             df_processed = process_immi_data(spark, remove_extra(raw_file), df_visatype, df_ccodes, df_airports)
             flag = False
         else:
             df_processed = df_processed.union(process_immi_data(spark, remove_extra(raw_file), df_visatype, df_ccodes, df_airports))
+            
+    assert df_processed.count() != 0,"df_processed is empty"   
         
     ## write processed dataframes ##
     print(f'started writing processed dataframes')
