@@ -1,0 +1,118 @@
+,Location,Airport,IATA_Code,Passenger_Role,2018_passengers
+0,Akron,Akron Executive Airport,AKC,Non-Hub/Reliever,No Commercial Service
+1,Albany,Albany International Airport,ALB,Small,"2,848,000 [2]"
+2,Albuquerque,Albuquerque International Sunport,ABQ,Medium,"5,258,775 [3]"
+3,Anchorage,Ted Stevens Anchorage International Airport,ANC,Medium,"5,176,371[4]"
+4,Appleton,Appleton International Airport,ATW,Small,"717,757 [5]"
+5,Atlanta,Hartsfield-Jackson Atlanta International Airport,ATL,Large,107394029
+6,Atlantic City,Atlantic City International Airport,ACY,Small,TBA
+7,Austin,Austin-Bergstrom International Airport,AUS,Medium,"15,819,912 [6]"
+8,Baltimore,Baltimore-Washington International Thurgood Marshall Airport,BWI,Large,"27,145,831 [7]"
+9,Bangor,Bangor International Airport,BGR,Non-Hub,TBA
+10,Birmingham,Birmingham-Shuttlesworth International Airport,BHM,Small,"2,972,776 [8]"
+11,Boise,Boise Airport,BOI,Medium,"3,864,819[9]"
+12,Boston,Logan International Airport,BOS,Large,"40,941,925 [10]"
+13,Buffalo,Buffalo Niagara International Airport,BUF,Medium,"5,014,513[11]"
+14,Charlotte,Charlotte/Douglas International Airport,CLT,Large,"45,909,899 [12]"
+15,Charleston,Charleston International Airport,CHS,Medium,TBA
+16,Chicago,Chicago Midway International Airport,MDW,Large,"20,298,847 [13] (As of 11/2018)"
+17,Chicago,O'Hare International Airport,ORD,Large,"76,799,005 [14] (As of 11/2018)"
+18,Cincinnati,Cincinnati/Northern Kentucky International Airport,CVG,Medium,"8,865,568 [15]"
+19,Cleveland,Cleveland Hopkins International Airport,CLE,Medium,9642729
+20,Columbus,John Glenn Columbus International Airport,CMH,Medium,"8,141,656 [16]"
+22,Dallas,Dallas/Fort Worth International Airport,DFW,Large,69112607
+23,Dayton,Dayton International Airport,DAY,Small,905558
+24,Denver,Denver International Airport,DEN,Large,64494613
+25,Des Moines,Des Moines International Airport,DSM,Small,"2,773,207[17]"
+26,Detroit,Detroit Metropolitan Wayne County Airport,DTW,Large,35236676
+27,El Paso,El Paso International Airport,ELP,Medium,"3,516,911[18]"
+28,Fairbanks,Fairbanks International Airport,FAI,Small,"1,078,085[19]"
+29,Fort Lauderdale,Fort Lauderdale-Hollywood International Airport,FLL,Large,35963370
+30,Fort Myers,Southwest Florida International Airport,RSW,Medium,9373178
+31,Fresno,Fresno Yosemite International Airport,FAT,Small,1630000
+32,Hartford,Bradley International Airport,BDL,Medium,"6,668,198[20]"
+33,Grand Rapids,Gerald R. Ford International Airport,GRR,Medium,"3,587,7670[21]"
+34,Green Bay,Green Bay–Austin Straubel International Airport,GRB,Small,"650,000[22]"
+35,Greensboro,Piedmont Triad International Airport,GSO,Small,"1,859,588[23]"
+36,Hilo,Hilo International Airport,ITO,Small,TBA
+37,Honolulu,Daniel K. Inouye International Airport,HNL,Large,"19,022,665[24]"
+38,Houston,George Bush Intercontinental Airport,IAH,Large,43807539
+39,Houston,William P. Hobby Airport,HOU,Medium,14476469
+40,Huntsville (AL),Huntsville International Airport,HSV,Small,TBA
+41,Indianapolis,Indianapolis International Airport,IND,Medium,9413962
+42,Jacksonville,Jacksonville International Airport,JAX,Medium,6460253
+43,Juneau,Juneau International Airport,JNU,Non-Hub,TBA
+44,Kansas City,Kansas City International Airport,MCI,Medium,11850825
+45,Ketchikan,Ketchikan International Airport,KTN,Non-Hub,TBA
+46,Key West,Key West International Airport,EYW,Small,"389,187[25] As of 11/2018"
+47,Kona,Kona International Airport,KOA,Small,TBA
+48,Knoxville,McGhee Tyson Airport,TYS,Small,"2,123,169[26]"
+49,Lakeland,Lakeland Linder International Airport,LAL,Reliever,No Commercial Service
+50,Lansing,Capital Region International Airport,LAN,Non-Hub,345652
+51,Las Vegas,McCarran International Airport,LAS,Large,49716584
+52,Little Rock,Clinton National Airport,LIT,Small,"2,056,795[27]"
+53,Los Angeles,Los Angeles International Airport,LAX,Large,87534384
+54,Louisville,Louisville International Airport,SDF,Medium,3866057
+55,Melbourne,Melbourne International Airport,MLB,Non-Hub,TBA
+56,Memphis,Memphis International Airport,MEM,Medium,4419541
+57,Miami,Miami International Airport,MIA,Large,45044312
+58,Midland,Midland International Air & Space Port,MAF,Small,TBA
+59,Milwaukee,General Mitchell International Airport,MKE,Medium,7097627
+60,Minneapolis,Minneapolis-Saint Paul International Airport,MSP,Large,38037381
+61,Myrtle Beach,Myrtle Beach International Airport,MYR,Small,"2,509,874[28]"
+62,Nashville,Nashville International Airport,BNA,Medium,15996194
+63,New Orleans,Louis Armstrong New Orleans International Airport,MSY,Medium,13125891
+64,New York,John F. Kennedy International Airport,JFK,Large,61909148
+65,New York,LaGuardia Airport,LGA,Large,30094074
+66,Newark,Newark Liberty International Airport,EWR,Large,46065175
+67,Newburgh,Stewart International Airport,SWF,Small,690411
+68,Norfolk,Norfolk International Airport,ORF,Medium,"3,688,921[29]"
+69,Oakland,Metropolitan Oakland International Airport,OAK,Medium,13594251
+70,Oklahoma City,Will Rogers World Airport,OKC,Medium,"4,149,410[30]"
+71,Omaha,Eppley Airfield,OMA,Medium,5043194
+72,Ontario,Ontario International Airport,ONT,Medium,5115894
+73,Orange County,John Wayne Airport,SNA,Medium,10664038
+74,Orlando,Orlando International Airport,MCO,Large,47696627
+75,Orlando/Sanford,Orlando Sanford International Airport,SFB,Small,"3,094,487[31]"
+76,Palm Springs,Palm Springs International Airport,PSP,Small,"2,327,018[32]"
+77,Panama City,Northwest Florida Beaches International Airport,ECP,Medium,"4,056,101[33]"
+78,Pensacola,Pensacola International Airport,PNS,Small,"1,902,671[34]"
+79,Philadelphia,Philadelphia International Airport,PHL,Large,31691956
+80,Phoenix,Phoenix Sky Harbor International Airport,PHX,Large,44943686
+81,Phoenix/Mesa,Phoenix–Mesa Gateway Airport,AZA,Small,1531648
+82,Pittsburgh,Pittsburgh International Airport,PIT,Medium,9658897
+83,Portland,Portland International Jetport,PWM,Small,"2,134,430[35]"
+84,Portland,Portland International Airport,PDX,Large,19882788
+85,Providence,T.F. Green Airport,PVD,Medium,4298345
+86,Racine,Batten International Airport,RAC,Small,Unknown (private)
+87,Raleigh/Durham,Raleigh-Durham International Airport,RDU,Medium,12801697
+88,Reno,Reno-Tahoe International Airport,RNO,Medium,4210095
+89,Rochester,Rochester International Airport,RST,Non-Hub,366542
+90,Rochester,Greater Rochester International Airport,ROC,Small,"2,557,038[36]"
+91,Rockford,Chicago Rockford International Airport,RFD,Non-Hub,TBA
+92,Sacramento,Sacramento International Airport,SMF,Medium,12050763
+93,Salt Lake City,Salt Lake City International Airport,SLC,Large,25554244
+94,San Antonio,San Antonio International Airport,SAT,Medium,10044411
+95,San Bernardino,San Bernardino International Airport,SBD,Reliever,No Commercial Service
+96,San Diego,San Diego International Airport,SAN,Large,24238300
+97,Richmond,Richmond International Airport,RIC,Medium,"4,077,763[37]"
+98,San Francisco,San Francisco International Airport,SFO,Large,57793313
+99,San Jose,San Jose International Airport,SJC,Medium,14319292
+100,Sarasota/Bradenton,Sarasota-Bradenton International Airport,SRQ,Small,1371888
+101,Savannah,Savannah/Hilton Head International Airport,SAV,Small,"2,709,094[38]"
+102,Seattle,Kenmore Air Harbor Seaplane Base,LKE,Reliever,TBA
+103,Seattle,King County International Airport,BFI,Reliever,TBA
+104,Seattle,Seattle-Tacoma International Airport,SEA,Large,49849520
+105,Sheboygan,Sheboygan County Memorial Airport,SBM,Non-Hub,No Commercial Service
+106,Snohomish County (WA),Paine Field,PAE,Reliever,Service Began 3/4/2019
+107,Spokane,Spokane International Airport,GEG,Medium,3998272
+108,St Louis,St. Louis Lambert International Airport,STL,Medium,15800586
+109,St Petersburg (FL),St. Petersburg-Clearwater International Airport,PIE,Small,2237440
+110,Syracuse,Syracuse Hancock International Airport,SYR,Small,2315933
+111,Tallahassee,Tallahassee International Airport,TLH,Small,TBA
+112,Tampa,Tampa International Airport,TPA,Large,21289390
+113,Washington,Ronald Reagan Washington National Airport**,DCA,Large,"22,695,582[39]"
+114,Washington,Washington Dulles International Airport,IAD,Large,24060709
+115,West Palm Beach,Palm Beach International Airport,PBI,Medium,6513943
+116,Wilkes-Barre/Scranton,Wilkes-Barre/Scranton International Airport,AVP,Small,"508,825[40]"
+117,Wilmington,Wilmington International Airport,ILM,Small,"934,058[41]"
