@@ -31,3 +31,6 @@ Extended information about data can be found in two provided jupyter notebooks.
 | us-states.csv                   | Internet                                                     | csv         | df_states_US    | List of US state names with corresponding codes              |
 | I94_SAS_Labels_Descriptions.SAS | Udacity                                                      | SAS         |                 | Provided labels for CoC, CoR, and PoE                        |
 | uszips.csv                      | Internet                                                     | csv         | df_uszips       | Valuable source of information for zips, county_fips etc.    |
+
+#### Model Data Warehouse
+![schema](images/model_data_warehouse.png)
