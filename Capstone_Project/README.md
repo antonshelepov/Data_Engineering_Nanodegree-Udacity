@@ -26,9 +26,8 @@ Extended information about data can be found in two provided jupyter notebooks.
 | visatype.csv                    |                                                              | csv         | df_visatype     | Holds data about different visa types a person can apply for based on his immigration purpose |
 | country_codes.csv               | [Github / lukes](https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes) | csv         | df_ccodes       | ISO 3166-1 country lists merged with their UN Geoscheme regional codes |
 | us-cities-demographics.csv      | Udacity                                                      | csv         | df_demographics |                                                              |
-| airport-codes_csv.csv           | Udacity                                                      | csv         | df_airports     |                                                              |
-| international_airports_US.csv   | [Wikipedia](https://en.wikipedia.org/wiki/List_of_international_airports_by_country#United_States) | csv         | df_inter_US     |                                                              |
-| us-states.csv                   | Internet                                                     | csv         | df_states_US    |                                                              |
+| airport-codes_csv.csv           | Udacity                                                      | csv         | df_airports     | Contains data about airport's capacity, elevation, coordinates |
+| international_airports_US.csv   | [Wikipedia](https://en.wikipedia.org/wiki/List_of_international_airports_by_country#United_States) | csv         | df_inter_US     | List of US international airports, their size (category) and capacity |
+| us-states.csv                   | Internet                                                     | csv         | df_states_US    | List of US state names with corresponding codes              |
 | I94_SAS_Labels_Descriptions.SAS | Udacity                                                      | SAS         |                 | Provided labels for CoC, CoR, and PoE                        |
 | uszips.csv                      | Internet                                                     | csv         | df_uszips       | Valuable source of information for zips, county_fips etc.    |
-
