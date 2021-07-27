@@ -12,7 +12,7 @@ fact_immi_table_create = ("""CREATE TABLE IF NOT EXISTS immigrants (i94id SERIAL
                                                                 PoE VARCHAR, \
                                                                 state_landing VARCHAR, \
                                                                 age INTEGER, \
-                                                                visapost VARCHAR, \
+                                                                visa_issued_in VARCHAR, \
                                                                 occup VARCHAR, \
                                                                 year_birth INTEGER, \
                                                                 gender VARCHAR, \
@@ -77,7 +77,7 @@ dim_visatype_table_create = ("""CREATE TABLE IF NOT EXISTS visatype (visatype VA
  
  
 # insert records
-immi_table_insert = ("""INSERT INTO immigrants (CoC,CoR,PoE,state_landing,age,visapost,occup,year_birth,gender,airline_used,num_flight,visatype,dt_arrival,dt_departure,month)
+immi_table_insert = ("""INSERT INTO immigrants (CoC,CoR,PoE,state_landing,age,visa_issued_in,occup,year_birth,gender,airline_used,num_flight,visatype,dt_arrival,dt_departure,month)
                         VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
                         ON CONFLICT (i94id)
                             DO NOTHING;
