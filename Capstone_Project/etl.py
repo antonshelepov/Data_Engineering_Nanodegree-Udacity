@@ -11,7 +11,7 @@ def process_csv(cur, conn, df_airports, df_ccodes, df_demographics, df_visatype)
     for i, row in df_airports.iterrows():
         cur.execute(airports_table_insert, row)
     
-    for i, row in df_ccodes.iterrows():
+    for i, row in df_ccodes[:4].iterrows():
         cur.execute(ccodes_table_insert, row)
         
     for i, row in df_demographics.iterrows():
@@ -49,19 +49,21 @@ def main():
     
     - sends files to ETL
     """
-    conn = psycopg2.connect("host= dbname= user= password= port=")
+    conn = psycopg2.connect("host=127.0.0.1 dbname=capstone user=postgres password=postgres port=5433")
     conn.set_session(autocommit=True)
     cur = conn.cursor()
     
     # read data
     raw_airports = pd.read_csv('./output/df_airports.csv')
-    raw_ccodes = pd.read_csv('./output/df_ccodes.csv')
+    raw_ccodes = pd.read_csv('./output/df_ccodes.csv', converters={"country_code":str,
+                                                                       "country_region_code":str,
+                                                                       "country_sub_region_code":str})
     raw_demographics = pd.read_csv('./output/df_demographics.csv')
     raw_visatype = pd.read_csv('./output/df_visatype.csv')
     
     process_csv(cur, conn, raw_airports, raw_ccodes, raw_demographics, raw_visatype)
-    process_immi(cur, conn, filepath='./output/df_immi/*')
-    quality(cur, conn, tables_list)
+    print(f'.csv were processed')
+    process_immi(cur, conn, filepath='./output_test/*')
 
     conn.close()
 

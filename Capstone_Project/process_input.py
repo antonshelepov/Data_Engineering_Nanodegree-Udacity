@@ -6,13 +6,13 @@ import json
 import glob
 
 # define spark modules
-from pyspark.sql import SparkSession
-
+from pyspark.sql import SparkSession    
+                                        
 from pyspark.sql.types import IntegerType, DateType
-
-from pyspark.sql.functions import udf
-
-from pyspark.sql.functions import month
+                                        
+from pyspark.sql.functions import udf   
+                                        
+from pyspark.sql.functions import month 
 
 
 spark = SparkSession.builder.\
@@ -160,11 +160,12 @@ def process_ccodes(I94_cit_codes, df_ccodes):
                                         how='left', 
                                         left_on='I94_country_low', 
                                         right_on='name_low')
-    # remove all NaN values
+    # merge two dataframes
     df_ccodes_final = df_I94_merged[df_I94_merged.name.notna()].copy()
     cols_2_drop = ['I94_country', 'I94_country_low', 'intermediate_region', 'intermediate_region_code', 'name_low']
     df_ccodes_final.drop(cols_2_drop, inplace = True, axis = 1)
-    df_ccodes_final.rename(columns={"name":"county_name",
+    df_ccodes_final.rename(columns={"I94_country_code":"i94_country_code",
+                              "name":"country_name",
                               "alpha_2":"country_alpha_2",
                               "alpha_3":"country_alpha_3",
                               "iso_3166_2":"country_iso_3166_2",
@@ -172,11 +173,6 @@ def process_ccodes(I94_cit_codes, df_ccodes):
                               "sub_region":"country_sub_region",
                               "region_code":"country_region_code",
                               "sub_region_code":"country_sub_region_code"}, inplace=True)
-    # set type int
-    cols_float_2_int = ['country_sub_region_code']
-    for col in cols_float_2_int:
-        df_ccodes_final[col] = df_ccodes_final[col].replace(np.nan, 0)
-        df_ccodes_final[col] = df_ccodes_final[col].astype(int)
     return df_ccodes_final
 
 # passed
@@ -312,7 +308,7 @@ def remove_extra(df):
     df = df.drop(*cols_2_remove)
     return df
 
-udf_to_datetime_sas = udf(lambda x: to_datetime(x), DateType())
+#udf_to_datetime_sas = udf(lambda x: to_datetime(x), DateType())
 def to_datetime(x):
     """This method takes in a SAS coded date and converts it to a normal one
     
@@ -412,7 +408,8 @@ def main():
     ## read files as raw ##
     raw_visatype = pd.read_csv(fname_visatype,delimiter='|')
     raw_ccodes = pd.read_csv(fname_ccodes, converters={"country_code":str,
-                                                       "region_code":str})
+                                                       "region_code":str,
+                                                       "sub_region_code":str})
     raw_airports = pd.read_csv(fname_airports)
     raw_international = pd.read_csv(fname_international)
     raw_demographics = pd.read_csv(fname_demographics,delimiter=";")
@@ -452,8 +449,8 @@ def main():
     
     # define list of immigration files to process
     immi_files = glob.glob(dir_immi_data)
-    
-    # process immigration data
+   
+   # process immigration data
     flag = True
     for count,immi_file in enumerate(immi_files):
         print(f'--- Processing: {count+1} | {len(immi_files)} ---> {immi_file}')

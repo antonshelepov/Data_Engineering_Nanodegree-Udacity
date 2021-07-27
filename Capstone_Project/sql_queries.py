@@ -42,16 +42,16 @@ dim_airports_table_create = ("""CREATE TABLE IF NOT EXISTS airports (city_name V
                                                                  PRIMARY KEY(city_name,state_name));
  """)
  
-dim_ccodes_table_create = ("""CREATE TABLE IF NOT EXISTS ccodes (I94_country_code INTEGER, \
-                                                             county_name VARCHAR, \
+dim_ccodes_table_create = ("""CREATE TABLE IF NOT EXISTS ccodes (i94_country_code INTEGER, \
+                                                             country_name VARCHAR, \
                                                              country_alpha_2 VARCHAR, \
                                                              country_alpha_3 VARCHAR, \
                                                              country_code VARCHAR, \
                                                              country_iso_3166_2 VARCHAR, \
                                                              country_region VARCHAR, \
                                                              country_sub_region VARCHAR, \
-                                                             country_region_code INTEGER, \
-                                                             country_sub_region_code INTEGER, \
+                                                             country_region_code VARCHAR, \
+                                                             country_sub_region_code VARCHAR, \
                                                              PRIMARY KEY(I94_country_code));
  """)
  
@@ -89,7 +89,7 @@ airports_table_insert = ("""INSERT INTO airports (city_name,airport_name,iata_co
                             DO NOTHING;
 """)
 
-ccodes_table_insert = ("""INSERT INTO ccodes (I94_country_code,county_name,country_alpha_2,country_alpha_3,country_code,country_iso_3166_2,country_region,country_sub_region,country_region_code,country_sub_region_code)
+ccodes_table_insert = ("""INSERT INTO ccodes (i94_country_code,country_name,country_alpha_2,country_alpha_3,country_code,country_iso_3166_2,country_region,country_sub_region,country_region_code,country_sub_region_code)
                         VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
                         ON CONFLICT (I94_country_code)
                             DO NOTHING;
