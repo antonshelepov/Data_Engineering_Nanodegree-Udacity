@@ -384,7 +384,8 @@ def process_immi_data(spark, df_raw, df_visatype, df_country_code, df_airports):
                 .withColumnRenamed("i94bir", "age")
                 .withColumnRenamed("biryear", "year_birth")
                 .withColumnRenamed("airline", "airline_used")
-                .withColumnRenamed("fltno", "num_flight"))
+                .withColumnRenamed("fltno", "num_flight")
+                .withColumnRenamed("visapost", "visa_issued_in"))
     return df_raw
 
 def main():
