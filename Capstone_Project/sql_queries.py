@@ -46,7 +46,7 @@ dim_ccodes_table_create = ("""CREATE TABLE IF NOT EXISTS ccodes (I94_country_cod
                                                              county_name VARCHAR, \
                                                              country_alpha_2 VARCHAR, \
                                                              country_alpha_3 VARCHAR, \
-                                                             country_code INTEGER, \
+                                                             country_code VARCHAR, \
                                                              country_iso_3166_2 VARCHAR, \
                                                              country_region VARCHAR, \
                                                              country_sub_region VARCHAR, \
